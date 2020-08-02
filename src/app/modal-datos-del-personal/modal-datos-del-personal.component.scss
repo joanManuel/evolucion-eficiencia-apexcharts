@@ -1,0 +1,128 @@
+.ui-dialog{
+    @media (min-width:768px){
+        width: 100%;
+        max-width: 900px;
+        // width: '50vw'
+    }
+}
+.ui-dialog-content{
+    background-color: #F6F6F6!important;
+}
+.contenedor-datos-del-personal{
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 15px;
+    max-width: 900px;
+    @media (min-width:768px){
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+    .nombre-foto-operario{
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        padding: 15px 15px 15px 15px;
+        align-items: center;
+        background-color: #fff;
+        @media (min-width:768px){
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+        span{
+            font-weight: bold;
+            font-size: 2.2rem;
+            text-align: left;
+            
+        }
+        .foto{
+            width: 90px;
+            height: 90px;
+            background-color: red;
+            border-radius: 50%;
+            @media (min-width:768px){
+                grid-row: 1/2;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .content-datos-eficiencia{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 15px;
+        @media (min-width:768px){
+            align-items: center;
+        }
+        >div{
+            // background-color: peru;
+            width: 100%;
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3)
+            {
+                >p{
+                    background-color: #F07F32;
+                    color: white;
+                    text-align: center;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                .tipo-eficiencia{
+                    background-color: white;
+                    display: grid;
+                    padding: 15px 0;
+                    justify-content: center;
+                    align-content: center;
+                    text-align: center;
+                    >p{
+                        font-size: 18px;
+                        color: #000;
+                    }
+                    span{
+                        font-size: 40px;
+                        font-weight: bold;
+                        @media (min-width:768px){
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+            &:nth-child(3){
+                .tipo-eficiencia{
+                    span{
+                        color: green;
+                    }
+                }
+            }
+        }
+
+    }
+    .content-eficiencia-grafico{
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+        padding: 10px 20px;
+        .item-eficiencia{
+        // background-color: red;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content;
+        // row-gap: 10px;
+        text-align: center;
+            span{
+                &:nth-child(1){
+                    font-size: 2rem;
+                }
+            }    
+        }
+    }
+    .contenedor-grafico{
+        background-color: #fff;
+    }
+}
+.apexcharts-canvas{
+    margin: 0 auto;
+}

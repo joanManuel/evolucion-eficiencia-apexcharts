@@ -1,0 +1,29 @@
+<div class="contenedor-evolucion-eficiencia">
+  <div class="titulo">
+    <h1>Evolución eficiencia</h1>
+  </div>
+  
+  <div class="contenedor-grafico">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [legend]="chartOptions.legend"
+        [colors]="chartOptions.colors"
+        class="apx-grafico"
+        [class.mayorAcuatroColumnas]="data.length > 3"
+      ></apx-chart>
+  </div>
+</div>
+
+<p-dialog *ngIf="verDatosTrabajador" header="Datos" modal=true [(visible)] ="verDatosTrabajador" blockScroll=true>
+  <app-modal-datos-del-personal  [datosDelTrabajador]= "datosDelTrabajadorPadre" [activarModal]="verDatosTrabajador" ></app-modal-datos-del-personal>
+</p-dialog>
+
+<!-- <p-dialog header="Datos" [style]="{width: '50vw'}" modal=true [(visible)]="verDatosTrabajador">
+  <p> {{ data[seleccionado].nombreOperario }} </p>
+  <p> {{ data[seleccionado].apellidoOperario }} </p>
+</p-dialog> -->

@@ -1,0 +1,22 @@
+.contenedor-evolucion-eficiencia{
+    .titulo{
+        h1{
+            text-align: center;
+        }
+    }
+    .contenedor-grafico{
+        overflow-x: auto;
+        .apx-grafico{
+            display: block;
+            
+        }
+    }
+}
+
+.mayorAcuatroColumnas{
+    min-width: 600px;
+}
+
+.ui-dialog-content{
+    // background-color: red!important;
+}

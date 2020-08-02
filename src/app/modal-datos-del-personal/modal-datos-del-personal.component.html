@@ -1,0 +1,58 @@
+<div *ngIf="activarModal">
+    <div class="contenedor-datos-del-personal">
+        <div class="nombre-foto-operario">
+            <span> {{datosDelTrabajador[0].nombreOperario}} {{datosDelTrabajador[0].apellidoOperario}} </span>
+            <div class="foto">
+                <img src="" alt="">
+            </div>
+        </div>
+
+        <div class="content-datos-eficiencia">
+            <div class="datos-eficiencia">
+               <p>Quincenal</p>
+               <div class="tipo-eficiencia">
+                   <p>Eficiencia</p>
+                    <span>58%</span>
+                </div>
+            </div>
+            <div class="datos-eficiencia">
+               <p>Diaria</p>
+               <div class="tipo-eficiencia">
+                   <p>Eficiencia</p>
+                    <span>60%</span>
+                </div>
+            </div>
+            <div class="datos-eficiencia">
+               <p>Incentivos</p>
+               <div class="tipo-eficiencia">
+                <p>Totales</p>
+                   <span>S/ 44.0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-eficiencia-grafico">
+            <div class="item-eficiencia" *ngFor="let item of datosLista; let i = index">
+                    <span [ngStyle]="{'color':datosColores[i]}"> {{item.eficiencia}} %</span>
+                    <span>{{item.hora}}</span>
+            </div>
+            
+            
+        </div>
+
+        <div class="contenedor-grafico">
+            <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [legend]="chartOptions.legend"
+        [colors]="chartOptions.colors"
+        class="apx-grafico"
+       
+      ></apx-chart>
+        </div>
+    </div>
+</div>
